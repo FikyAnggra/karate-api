@@ -10,55 +10,57 @@ pipeline {
         stage('Test') {
             steps {
                 bat 'mvn test -Dtest=TestRunnerProearn'
-                script {
-                def resulthtml = readFile('target/karate-reports/karate-summary-json.txt').toString()
-                                    def json = new groovy.json.JsonSlurperClassic().parseText(resulthtml)
-                                    def featuresPassed = json.featuresPassed
-                                    def featuresFailed = json.featuresFailed
-                                    def totalTime = json.totalTime
-                                    def featuresSkipped = json.featuresSkipped
-                                    def resultDate = json.resultDate
-                                    def scenariosPassed = json.scenariosPassed
-                                    def scenariosFailed = json.scenariosfailed
-
-                                    def messageAllFeature =
-                                                """
-                                                Result Automation Karate API NOBI\n
-
-                                                Running Date        = ${resultDate}
-                                                Total Running Time  = ${totalTime} m/s
-                                                Feature Passed      = ${featuresPassed}
-                                                Feature Skipped     = ${featuresSkipped}
-                                                Feature Failed      = ${featuresFailed}
-                                                Scenario Passed     = ${scenariosPassed}
-                                                Scenario Failed     = ${scenariosFailed}
-                                                """
-                                    discordSend description: "${messageAllFeature}", footer: "${currentBuild.currentResult}", link: "$BUILD_URL", result: currentBuild.currentResult, title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}", webhookURL: "https://discord.com/api/webhooks/1105458981620682925/FuYrySqFHZNWFq87vUe8TF__5WSK5ECDQIY_Z63MDMzDuZixzUOeSCHejdXFAlLS1Pd9"
-
-                                    def featureSummary = json.featureSummary
-                                    for (int i = 0; i < featureSummary.size(); i++) {
-                                        def durationMillis = json.featureSummary.durationMillis[i]
-                                        def name = json.featureSummary.name[i]
-                                        def scenarioCount = json.featureSummary.scenarioCount[i]
-                                        def passedCount = json.featureSummary.passedCount[i]
-                                        def failedCount = json.featureSummary.failedCount[i]
-                                        def failed = json.featureSummary.failed[i]
-                                        def packageQualifiedName = json.featureSummary.packageQualifiedName[i]
-                                        def messageScenario =
-                                                """
-                                                ==================================
-                                                Automation Karate API
-                                                Feature Summary
-                                                ==================================
-                                                Feature Name        = ${name}
-                                                Running Time        = ${durationMillis} m/s
-                                                Total Scenario      = ${scenarioCount}
-                                                Scenario Passed     = ${passedCount}
-                                                Scenario Failed     = ${failedCount}
-                                                ==================================
-                                                """
-                }
             }
+        }
+        stage('Status') {
+            script {
+                            def resulthtml = readFile('target/karate-reports/karate-summary-json.txt').toString()
+                                                def json = new groovy.json.JsonSlurperClassic().parseText(resulthtml)
+                                                def featuresPassed = json.featuresPassed
+                                                def featuresFailed = json.featuresFailed
+                                                def totalTime = json.totalTime
+                                                def featuresSkipped = json.featuresSkipped
+                                                def resultDate = json.resultDate
+                                                def scenariosPassed = json.scenariosPassed
+                                                def scenariosFailed = json.scenariosfailed
+
+                                                def messageAllFeature =
+                                                            """
+                                                            Result Automation Karate API NOBI\n
+
+                                                            Running Date        = ${resultDate}
+                                                            Total Running Time  = ${totalTime} m/s
+                                                            Feature Passed      = ${featuresPassed}
+                                                            Feature Skipped     = ${featuresSkipped}
+                                                            Feature Failed      = ${featuresFailed}
+                                                            Scenario Passed     = ${scenariosPassed}
+                                                            Scenario Failed     = ${scenariosFailed}
+                                                            """
+                                                discordSend description: "${messageAllFeature}", footer: "${currentBuild.currentResult}", link: "$BUILD_URL", result: currentBuild.currentResult, title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}", webhookURL: "https://discord.com/api/webhooks/1105458981620682925/FuYrySqFHZNWFq87vUe8TF__5WSK5ECDQIY_Z63MDMzDuZixzUOeSCHejdXFAlLS1Pd9"
+
+                                                def featureSummary = json.featureSummary
+                                                for (int i = 0; i < featureSummary.size(); i++) {
+                                                    def durationMillis = json.featureSummary.durationMillis[i]
+                                                    def name = json.featureSummary.name[i]
+                                                    def scenarioCount = json.featureSummary.scenarioCount[i]
+                                                    def passedCount = json.featureSummary.passedCount[i]
+                                                    def failedCount = json.featureSummary.failedCount[i]
+                                                    def failed = json.featureSummary.failed[i]
+                                                    def packageQualifiedName = json.featureSummary.packageQualifiedName[i]
+                                                    def messageScenario =
+                                                            """
+                                                            ==================================
+                                                            Automation Karate API
+                                                            Feature Summary
+                                                            ==================================
+                                                            Feature Name        = ${name}
+                                                            Running Time        = ${durationMillis} m/s
+                                                            Total Scenario      = ${scenarioCount}
+                                                            Scenario Passed     = ${passedCount}
+                                                            Scenario Failed     = ${failedCount}
+                                                            ==================================
+                                                            """
+                            }
         }
     }
     post {
