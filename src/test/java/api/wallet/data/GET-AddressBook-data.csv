@@ -1,0 +1,12 @@
+test_case,service,,message,index_data,,id,user_id,coin_id,coin_name,crypto_address,crypto_network,wallet_label,memo,recipient_name,recipient_address,status
+Success retrieve data,walletAddressBook.list,,Data berhasil diambil,0,,ed198bde-f4a1-4f79-9195-69fcc8cd3b95,7003,926,XRP (Ripple),riyESshVMFsueNqa8wm6rHv1iw3uPNTK8,XRP,XRP Mei,,known,ju1nai1,1
+Success retrieve data,walletAddressBook.list,,Data berhasil diambil,1,,01074b6b-e254-4e9a-920d-ffab9c5d0a74,7003,531,Honest,bnb148nzqvt6f6fw938grwsnzxyv5vppdt93zatsd3,BEP2,Meimeilinda,29191,Mei Linda ,Sumatra,1
+Success retrieve data,walletAddressBook.list,,Data berhasil diambil,2,,2571e153-ce9e-4d6f-a6d0-433710f82a39,7003,920,BNB,bnb1mrrastsm7hjnpxc7eunj0ql09nv3qtr4mwrmq5,BEP2,bnbsam1,35597,known,ju1nai1,1
+Success retrieve data,walletAddressBook.list,,Data berhasil diambil,3,,90acfddc-426a-4cf2-84aa-f5bc5b6dc056,7003,531,Honest,bnb148nzqvt6f6fw938grwsnzxyv5vppdt93zatsd3,BEP2,Meimeilinda,29191231,Mei Linda ,Sumatra,1
+Success retrieve data,walletAddressBook.list,,Data berhasil diambil,4,,9252c606-af20-4618-85f5-8fa41f7cb27d,7003,920,BNB,bnb1mrrastsm7hjnpxc7eunj0ql09nv3qtr4mwrmq5,BEP2,bnbsam,35597,known,ju1nai1,1
+Success retrieve data,walletAddressBook.list,,Data berhasil diambil,5,,ebfc1e0a-5b94-488b-81a3-cdd03a40d4b9,7003,531,Honest,bnb148nzqvt6f6fw938grwsnzxyv5vppdt93zatsd3,BEP2,Meimeilinda,291911,Mei Linda ,Sumatra,1
+Success retrieve data,walletAddressBook.list,,Data berhasil diambil,6,,648c9f19-b970-42af-bd59-39359aca0220,7003,913,Tether ,0x08F37910F2f8d6aa04F15E2Fb425B4bb3E9D3c0c,ERC20,ETH TW Meilinda,,Meilinda,Bandung,1
+Success retrieve data,walletAddressBook.list,,Data berhasil diambil,7,,19c59e06-d4d0-4ebe-8c86-3ceca39c5155,7003,913,Tether ,0x9F6471a7c0944f01207FAc72CC092F9978b1cACD,ERC20,USDT Self1231241231,,USDT Self,Self,1
+Success retrieve data,walletAddressBook.list,,Data berhasil diambil,8,,25cf6263-5afa-4912-926d-124798086551,7003,913,Tether ,0x52BddeEfe6F54322ba2405CB005aeD5F2D3E2c96,ERC20,USDT Self,,USDT Self,Self,1
+Success retrieve data,walletAddressBook.list,,Data berhasil diambil,9,,2,7003,907,Ethereum,0x00C935d1Ca90A61A2F980794A7ee303F80A445DD,ERC20,ETH Metamask Goerli,,Putri,Medan,1
+Success retrieve data,walletAddressBook.list,,Data berhasil diambil,10,,4,7003,907,Ethereum,0x52BddeEfe6F54322ba2405CB005aeD5F2D3E2c96,ERC20,ETH Metamask Goerli,,Putri,Medan,1

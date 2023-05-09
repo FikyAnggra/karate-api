@@ -1,0 +1,4 @@
+Test Case,user_id,coin_id,status
+Success retrieve valid data,7832,920,true
+Failed retrieve valid data with wrong user id,3123932,920,false
+Failed retrieve invalid data with correct user id,7832,531,false

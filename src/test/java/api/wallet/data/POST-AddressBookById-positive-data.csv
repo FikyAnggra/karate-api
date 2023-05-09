@@ -1,0 +1,2 @@
+test_case,uuid,user_id,coin_id,coin_name,crypto_address,crypto_network,wallet_label,memo,recipient_name,recipient_address,status
+Success Get Address Book by UUID,0189f1a6-ad6a-43d6-9b97-e6d463686e96,7832,907,Ethereum,0x48E42E8FcB6A1FDa51A0BF044B584f67bb7A5Fb8,ERC20,ETH Mei,,Mei,xxx,0

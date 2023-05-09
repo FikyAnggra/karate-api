@@ -1,0 +1,5 @@
+index,index_id,name,service-name,is_active,user_level
+0,2,Deposit IDR,fiat-deposit,1,9
+1,3,Withdraw IDR,fiat-withdraw,1,9
+2,4,Deposit Crypto,crypto-deposit,1,9
+3,5,Withdraw Crypto,crypto-withdraw,1,9

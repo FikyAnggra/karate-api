@@ -1,0 +1,16 @@
+test_case,coin_id,address,name,memo
+Success verify Ethereum,907,0x48E42E8FcB6A1FDa51A0BF044B584f67bb7A5Fb8,Ethereum,
+Success verify BNB,920,bnb148nzqvt6f6fw938grwsnzxyv5vppdt93zatsd3,BNB,28000
+Success verify AVAX,924,0x0b138274867B0C156ee1F5B75a728bCEA3A9BbE7,Avalanche,
+Success verify FIRO,4,a11hSMLRZfjJcBmmr4yvzrjKANd8eB81zF,Firo,
+Success verify HNST,531,bnb148nzqvt6f6fw938grwsnzxyv5vppdt93zatsd3,Honest,27820
+Success verify ADA,906,addr_test1qzu0at6v4fgdne6lw35h6f4ysv26hvyjpvj0e6s9q9xhssuplusyfqtcz4400xmc7s68cpqx5eslj9xalkudjlk37tcqq045wt,Cardano,
+Success verify BTC,5,tb1qxuds00ehrpvf2dlawj29hgp098esn22hvkqxpf,Bitcoin,
+Success verify ATOM,925,cosmos1arjdtdskkszxpqy7kyxlwz0fj9ntmhn5zspxqr,Cosmos,B4B108C569F0777FF61E
+Success verify DASH,3,ycx9WH8L95V2t9AjVfbFSJ9Z83HMVmqpRM,Dash,
+Success verify DOT,922,5CBkvsPTr6btkpKdTNh7qhiGe9d7E5DcojXzzGYw4n8Rj15S,Polkadot,
+Success verify MATIC,908,0x48E42E8FcB6A1FDa51A0BF044B584f67bb7A5Fb8,Polygon,
+Success verify USDT,913,0x48E42E8FcB6A1FDa51A0BF044B584f67bb7A5Fb8,Tether ,
+Success verify UNI,916,0x48E42E8FcB6A1FDa51A0BF044B584f67bb7A5Fb8,Uniswap,
+Success verify USDC,914,0x48E42E8FcB6A1FDa51A0BF044B584f67bb7A5Fb8,USD Coin,
+Success verify XRP,926,rKRiZbYmNmy6WgbMtKfUssAyEWN8EnYryz,XRP,2549375391

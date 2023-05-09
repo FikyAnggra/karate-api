@@ -1,0 +1,3 @@
+Test Case,message,error_message,user_id,coin_id,status
+Failed Test Case with Unverified User,Parameter tidak valid,unverified user,3918391291,5,false
+Failed Test Case with Not Supported Coin for Earn,Data tidak ditemukan,Coin earn ID 531 not found,7832,531,false

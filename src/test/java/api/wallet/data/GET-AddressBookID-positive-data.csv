@@ -1,0 +1,2 @@
+user_id,address_book_id,service,message,coin_id,coin_name,crypto_address,crypto_network,wallet_label,memo,recipient_name,recipient_address
+7341,46af7add-7a89-4854-ba9e-5afdb8a321af,walletAddressBook.detail,Data berhasil diambil,923,IDK,0x52BddeEfe6F54322ba2405CB005aeD5F2D3E2c96,ERC20,IDK MEI,,Meilinda,Bandung
