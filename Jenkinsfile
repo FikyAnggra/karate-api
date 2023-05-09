@@ -9,7 +9,9 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'mvn test -Dtest=TestRunnerProearn'
+                bat 'mvn test -Dtest=TestRunnerProearn#AuthGenerate'
+                bat 'mvn test -Dtest=TestRunnerProearn#EarnCalculator'
+                bat 'mvn test -Dtest=TestRunnerProearn#EarnInfoListSku'
             }
         }
     }

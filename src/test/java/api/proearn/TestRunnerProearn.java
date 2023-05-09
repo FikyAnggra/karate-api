@@ -4,26 +4,26 @@ import com.intuit.karate.junit5.Karate;
 
 public class TestRunnerProearn {
 
-    @Karate.Test
-    Karate RunnerProearn() {
-        return Karate.run().relativeTo(getClass());
-    }
+//    @Karate.Test
+//    Karate RunnerProearn() {
+//        return Karate.run().relativeTo(getClass());
+//    }
 //    @Karate.Test
 //    Karate Regression() {
 //        return Karate.run().tags("@Regression").relativeTo(getClass());
 //    }
-//    @Karate.Test
-//    Karate AuthGenerate() {
-//        return Karate.run().tags("@AuthGenerate").relativeTo(getClass());
-//    }
-//    @Karate.Test
-//    Karate EarnCalculator() {
-//        return Karate.run().tags("@EarnCalculator").relativeTo(getClass());
-//    }
-//    @Karate.Test
-//    Karate EarnInfoListSku() {
-//        return Karate.run().tags("@EarnInfoListSku").relativeTo(getClass());
-//    }
+    @Karate.Test
+    Karate AuthGenerate() {
+        return Karate.run().tags("@AuthGenerate").relativeTo(getClass());
+    }
+    @Karate.Test
+    Karate EarnCalculator() {
+        return Karate.run().tags("@EarnCalculator").relativeTo(getClass());
+    }
+    @Karate.Test
+    Karate EarnInfoListSku() {
+        return Karate.run().tags("@EarnInfoListSku").relativeTo(getClass());
+    }
 //    @Karate.Test
 //    Karate EarnInfoList() {
 //        return Karate.run().tags("@EarnInfoList").relativeTo(getClass());
