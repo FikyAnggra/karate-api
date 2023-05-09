@@ -16,8 +16,9 @@ pipeline {
         }
         stage('Status') {
             steps {
-            def resulthtml = readFile('target/karate-reports/karate-summary-json.txt').toString()
-            def json = new groovy.json.JsonSlurperClassic().parseText(resulthtml)
+                script {
+                    def resulthtml = readFile('target/karate-reports/karate-summary-json.txt').toString()
+                    def json = new groovy.json.JsonSlurperClassic().parseText(resulthtml)
                                 def featuresPassed = json.featuresPassed
                                 def featuresFailed = json.featuresFailed
                                 def totalTime = json.totalTime
@@ -63,6 +64,7 @@ pipeline {
                                             ==================================
                                             """
                                 }
+                }
             }
         }
     }
