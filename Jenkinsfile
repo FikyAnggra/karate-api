@@ -13,7 +13,8 @@ pipeline {
                 bat 'mvn test -Dtest=TestRunnerProearn#EarnCalculator'
                 bat 'mvn test -Dtest=TestRunnerProearn#EarnInfoListSku'
             }
-        }stage('Status') {
+        }
+        stage('Status') {
             steps {
             def resulthtml = readFile('target/karate-reports/karate-summary-json.txt').toString()
             def json = new groovy.json.JsonSlurperClassic().parseText(resulthtml)
@@ -61,9 +62,11 @@ pipeline {
                                             Scenario Failed     = ${failedCount}
                                             ==================================
                                             """
+                                }
             }
         }
     }
+}
 //     post {
 //         always {
 //             script {
