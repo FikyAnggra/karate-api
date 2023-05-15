@@ -14,13 +14,6 @@ pipeline {
             }
         }
         stage('Push To Master') {
-            when {
-                not {
-                    expression {
-                        currentBuild.result == 'FAILURE'
-                    }
-                }
-            }
             steps {
                 script {
                     bat 'git checkout master'
