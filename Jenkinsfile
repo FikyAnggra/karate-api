@@ -3,27 +3,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/review']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/FikyAnggra/karate-api']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/FikyAnggra/karate-api']]])
                 discordSend description: "Jenkins Pipeline Build ${env.BUILD_NUMBER}", footer: "STARTED", result: "SUCCESS", title: "Jenkins Status", webhookURL: "https://discord.com/api/webhooks/1107548454009446400/VbmtyPgxWZAgu-1kcV7ZMYYyNuC4svQ2Mbhew6Hh6RxFSfI-Hmgp79QEa2ta3UytlaFb"
 
            }
         }
         stage('Test') {
             steps {
-                bat 'mvn test -Dtest=TestRunnerProearn#EarnCalculator'
-            }
-        }
-        stage('Push To Master') {
-            steps {
-                script {
-                    bat 'git checkout master'
-                    bat 'git merge origin/review'
-                    def mergeStatus = sh(returnStatus: true, script: 'git rev-parse --verify HEAD').exitStatus
-                    if (mergeStatus != 0) {
-                        discordSend description: "Gagal Merge Ke Branch Master", footer: "${currentBuild.currentResult}",  result: currentBuild.currentResult, title: "Jenskins Status", webhookURL: "https://discord.com/api/webhooks/1107548454009446400/VbmtyPgxWZAgu-1kcV7ZMYYyNuC4svQ2Mbhew6Hh6RxFSfI-Hmgp79QEa2ta3UytlaFb"
-                    }
-                    bat 'git push origin master'
-                }
+                bat 'mvn test -Dtest=TestRunnerProearn'
             }
         }
     }
@@ -97,9 +84,11 @@ pipeline {
                                 result: "SUCCESS", title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}",
                                 webhookURL: "https://discord.com/api/webhooks/1107548454009446400/VbmtyPgxWZAgu-1kcV7ZMYYyNuC4svQ2Mbhew6Hh6RxFSfI-Hmgp79QEa2ta3UytlaFb?thread_id=${ID}"
                             )
+
                         }
-                    }
+
                     }
             }
         }
     }
+}
