@@ -82,7 +82,7 @@ pipeline {
                         } else {
                             ID = "1107549132945641553"
                             discordSend (
-                                description: "channelId",
+                                description: "1",
                                 footer: "SUCCESS",
                                 link: "http://localhost:8888/job/automation-karate-api/${env.BUILD_NUMBER}/execution/node/3/ws/target/karate-reports/${packageQualifiedName}.html",
                                 result: "SUCCESS", title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}",
@@ -91,7 +91,7 @@ pipeline {
 
                             ID = "1107549132945641553"
                             discordSend (
-                                description: "channelId",
+                                description: "2",
                                 footer: "SUCCESS",
                                 link: "http://localhost:8888/job/automation-karate-api/${env.BUILD_NUMBER}/execution/node/3/ws/target/karate-reports/${packageQualifiedName}.html",
                                 result: "SUCCESS", title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}",
@@ -100,7 +100,7 @@ pipeline {
 
                             ID = 1107549132945641553
                             discordSend (
-                                description: "channelId",
+                                description: "3",
                                 footer: "SUCCESS",
                                 link: "http://localhost:8888/job/automation-karate-api/${env.BUILD_NUMBER}/execution/node/3/ws/target/karate-reports/${packageQualifiedName}.html",
                                 result: "SUCCESS", title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}",
