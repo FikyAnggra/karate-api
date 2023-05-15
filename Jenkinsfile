@@ -104,11 +104,8 @@ pipeline {
                                 result: "SUCCESS", title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}",
                                 webhookURL: "https://discord.com/api/webhooks/1107548454009446400/VbmtyPgxWZAgu-1kcV7ZMYYyNuC4svQ2Mbhew6Hh6RxFSfI-Hmgp79QEa2ta3UytlaFb?thread_id=${ID}"
                             )
-
                         }
-
                     }
             }
         }
     }
-}
