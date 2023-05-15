@@ -12,11 +12,11 @@ pipeline {
                 bat 'mvn test -Dtest=TestRunnerProearn'
             }
         }
-        stage('Push') {
-            steps {
-                git push origin master
-            }
-        }
+//         stage('Push') {
+//             steps {
+//                 git push origin master
+//             }
+//         }
     }
     post {
         always {
