@@ -26,18 +26,17 @@ Feature: Join Earn
 
     Examples:
       |testCase	                |testType	|coinId	|amount	|status	|statusService	|statusNumber	|statusCode	|message      |
-      |Success - User Join DAI	|Positive	|911	|7	    |1	    |10	            |F010001	    |SSSSSS	    |Success Join |
-      |Success - User Join ETH	|Positive	|907	|0.007	|1	    |10	            |F010001	    |SSSSSS	    |Success Join |
-      |Success - User Join DASH	|Positive	|3	    |0.07	|1	    |10	            |F010001	    |SSSSSS	    |Success Join |
-      |Success - User Join ONE	|Positive	|864	|35	    |1	    |10	            |F010001	    |SSSSSS	    |Success Join |
-      |Success - User Join USDC	|Positive	|914	|7	    |1	    |10	            |F010001	    |SSSSSS	    |Success Join |
-      |Success - User Join USDT	|Positive	|913	|7	    |1	    |10	            |F010001	    |SSSSSS	    |Success Join |
-      |Success - User Join VEX	|Positive	|867	|7000	|1	    |10	            |F010001	    |SSSSSS	    |Success Join |
-      |Success - User Join UNI	|Positive	|916	|0.7	|1	    |10	            |F010001	    |SSSSSS	    |Success Join |
-      |Success - User Join XZC	|Positive	|4	    |0.7	|1	    |10	            |F010001	    |SSSSSS	    |Success Join |
-      |Success - User Join BNB	|Positive	|920	|0.035	|1	    |10	            |F010001	    |SSSSSS	    |Success Join |
-      |Success - User Join BTC	|Positive	|5	    |0.0007	|1	    |10	            |F010001	    |SSSSSS	    |Success Join |
-      |Success - User Join ADA	|Positive	|906	|49	    |1	    |10	            |F010001	    |SSSSSS	    |Success Join |
-      |Success - User Join METIC|Positive	|908	|21	    |1	    |10	            |F010001	    |SSSSSS	    |Success Join |
-      |Success - User Join SOL	|Positive	|921	|0.7	|1	    |10	            |F010001	    |SSSSSS	    |Success Join |
-      |Success - User Join DOT	|Positive	|922	|1.75	|1	    |10	            |F010001	    |SSSSSS	    |Success Join |
+      |Success - User Join DAI	|Positive	|911	|1	    |1	    |10	            |F010001	    |SSSSSS	    |Success Join |
+      |Success - User Join ETH	|Positive	|907	|0.001	|1	    |10	            |F010001	    |SSSSSS	    |Success Join |
+      |Success - User Join ONE	|Positive	|864	|5	    |1	    |10	            |F010001	    |SSSSSS	    |Success Join |
+      |Success - User Join USDC	|Positive	|914	|1	    |1	    |10	            |F010001	    |SSSSSS	    |Success Join |
+      |Success - User Join USDT	|Positive	|913	|1	    |1	    |10	            |F010001	    |SSSSSS	    |Success Join |
+      |Success - User Join VEX	|Positive	|867	|1000	|1	    |10	            |F010001	    |SSSSSS	    |Success Join |
+      |Success - User Join UNI	|Positive	|916	|0.1	|1	    |10	            |F010001	    |SSSSSS	    |Success Join |
+      |Success - User Join XZC	|Positive	|4	    |0.1	|1	    |10	            |F010001	    |SSSSSS	    |Success Join |
+      |Success - User Join BNB	|Positive	|920	|0.005	|1	    |10	            |F010001	    |SSSSSS	    |Success Join |
+      |Success - User Join BTC	|Positive	|5	    |0.0001	|1	    |10	            |F010001	    |SSSSSS	    |Success Join |
+      |Success - User Join ADA	|Positive	|906	|7	    |1	    |10	            |F010001	    |SSSSSS	    |Success Join |
+      |Success - User Join METIC|Positive	|908	|3	    |1	    |10	            |F010001	    |SSSSSS	    |Success Join |
+      |Success - User Join SOL	|Positive	|921	|0.3	|1	    |10	            |F010001	    |SSSSSS	    |Success Join |
+      |Success - User Join DOT	|Positive	|922	|0.25	|1	    |10	            |F010001	    |SSSSSS	    |Success Join |
