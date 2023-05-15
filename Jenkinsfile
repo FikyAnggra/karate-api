@@ -22,8 +22,8 @@ pipeline {
             }
         }
         steps {
-            sh 'git checkout master'
-            sh 'git push origin master'
+            bat 'git checkout master'
+            bat 'git push origin master'
         }
     }
     post {
