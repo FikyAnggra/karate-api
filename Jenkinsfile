@@ -72,17 +72,13 @@ pipeline {
                         if (failed == true) {
                             discordSend description: "${messageScenario}", footer: "FAILURE", link: "http://localhost:8888/job/automation-karate-api/${env.BUILD_NUMBER}/execution/node/3/ws/target/karate-reports/${packageQualifiedName}.html", result: "FAILURE", title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}", webhookURL: "https://discord.com/api/webhooks/1107548454009446400/VbmtyPgxWZAgu-1kcV7ZMYYyNuC4svQ2Mbhew6Hh6RxFSfI-Hmgp79QEa2ta3UytlaFb#1107549132945641553"
                         } else {
-                                def discordWebhookUrl = 'https://discord.com/api/webhooks/1107548454009446400/VbmtyPgxWZAgu-1kcV7ZMYYyNuC4svQ2Mbhew6Hh6RxFSfI-Hmgp79QEa2ta3UytlaFb' // Ganti dengan webhook URL Anda
-                                def threadId = '1107549132945641553' // Ganti dengan thread ID yang sesuai
-
-                                def message = "Ini adalah pesan notifikasi"
-
-                                def discordNotifier = new org.jenkinsci.plugins.discordnotifier.DiscordNotifier(discordWebhookUrl)
-                                discordNotifier.sendDiscordMessage(
-                                    message,
-                                    threadId: threadId
-                                )
-                            discordSend description: "${messageScenario}", footer: "SUCCESS", link: "http://localhost:8888/job/automation-karate-api/${env.BUILD_NUMBER}/execution/node/3/ws/target/karate-reports/${packageQualifiedName}.html", result: "SUCCESS", title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}", webhookURL: "https://discord.com/api/webhooks/1107548454009446400/VbmtyPgxWZAgu-1kcV7ZMYYyNuC4svQ2Mbhew6Hh6RxFSfI-Hmgp79QEa2ta3UytlaFb#jenkins-success jenkins-status"
+                            discordSend (
+                            description: "${messageScenario}",
+                            footer: "SUCCESS",
+                            link: "http://localhost:8888/job/automation-karate-api/${env.BUILD_NUMBER}/execution/node/3/ws/target/karate-reports/${packageQualifiedName}.html",
+                            result: "SUCCESS", title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}",
+                            webhookURL: "https://discord.com/api/webhooks/1107547897408524338/VbmtyPgxWZAgu-1kcV7ZMYYyNuC4svQ2Mbhew6Hh6RxFSfI-Hmgp79QEa2ta3UytlaFb"
+                            )
                         }
 
                     }
