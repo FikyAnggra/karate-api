@@ -67,11 +67,11 @@ pipeline {
                                 Scenario Failed     = ${failedCount}
                                 ==================================
                                 """
-//                         if (failed == true) {
-//                             discordSend description: "${messageScenario}", footer: "FAILURE", link: "http://localhost:8888/job/automation-karate-api/${env.BUILD_NUMBER}/execution/node/3/ws/target/karate-reports/${packageQualifiedName}.html", result: "FAILURE", title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}", webhookURL: "https://discord.com/api/webhooks/1075243688457949226/jql77_Fnr25n_7x7o91AP0sZPe48bb35WM-ypvb42fyl3QlDjL4UFu9y6w0kXLRIdUsh"
-//                         } else {
-//                             discordSend description: "${messageScenario}", footer: "SUCCESS", link: "http://localhost:8888/job/automation-karate-api/${env.BUILD_NUMBER}/execution/node/3/ws/target/karate-reports/${packageQualifiedName}.html", result: "SUCCESS", title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}", webhookURL: "https://discord.com/api/webhooks/1075243688457949226/jql77_Fnr25n_7x7o91AP0sZPe48bb35WM-ypvb42fyl3QlDjL4UFu9y6w0kXLRIdUsh"
-//                         }
+                        if (failed == true) {
+                            discordSend description: "${messageScenario}", footer: "FAILURE", link: "http://localhost:8888/job/automation-karate-api/${env.BUILD_NUMBER}/execution/node/3/ws/target/karate-reports/${packageQualifiedName}.html", result: "FAILURE", title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}", webhookURL: "https://discord.com/api/webhooks/1075243688457949226/jql77_Fnr25n_7x7o91AP0sZPe48bb35WM-ypvb42fyl3QlDjL4UFu9y6w0kXLRIdUsh"
+                        } else {
+                            discordSend description: "${messageScenario}", footer: "SUCCESS", link: "http://localhost:8888/job/automation-karate-api/${env.BUILD_NUMBER}/execution/node/3/ws/target/karate-reports/${packageQualifiedName}.html", result: "SUCCESS", title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}", webhookURL: "https://discord.com/api/webhooks/1075243688457949226/jql77_Fnr25n_7x7o91AP0sZPe48bb35WM-ypvb42fyl3QlDjL4UFu9y6w0kXLRIdUsh"
+                        }
 
                     }
             }
