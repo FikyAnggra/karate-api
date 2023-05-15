@@ -11,8 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 bat 'mvn test -Dtest=TestRunnerProearn'
-                discordSend description: "Jenkins Pipeline Build ${env.BUILD_NUMBER}", footer: "${currentBuild.currentResult}",  result: currentBuild.currentResult, title: "Jenskins Status", webhookURL: "https://discord.com/api/webhooks/1107548454009446400/VbmtyPgxWZAgu-1kcV7ZMYYyNuC4svQ2Mbhew6Hh6RxFSfI-Hmgp79QEa2ta3UytlaFb"
-            }
+                }
         }
 //         stage('Push') {
 //             steps {
@@ -23,6 +22,7 @@ pipeline {
     post {
         always {
             script {
+            discordSend description: "Jenkins Pipeline Build ${env.BUILD_NUMBER}", footer: "${currentBuild.currentResult}",  result: currentBuild.currentResult, title: "Jenskins Status", webhookURL: "https://discord.com/api/webhooks/1107548454009446400/VbmtyPgxWZAgu-1kcV7ZMYYyNuC4svQ2Mbhew6Hh6RxFSfI-Hmgp79QEa2ta3UytlaFb"
                     def resulthtml = readFile('target/karate-reports/karate-summary-json.txt').toString()
                     def json = new groovy.json.JsonSlurperClassic().parseText(resulthtml)
                     def featuresPassed = json.featuresPassed
@@ -46,7 +46,7 @@ pipeline {
                                 Scenario Failed     = ${scenariosFailed}
                                 """
                     ID = 1107549132945641553
-                    discordSend description: "${messageAllFeature}", footer: "${currentBuild.currentResult}", link: "$BUILD_URL", result: currentBuild.currentResult, title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}", webhookURL: "https://discord.com/api/webhooks/1107548454009446400/VbmtyPgxWZAgu-1kcV7ZMYYyNuC4svQ2Mbhew6Hh6RxFSfI-Hmgp79QEa2ta3UytlaFb?thread_id={ID}"
+                    discordSend description: "${messageAllFeature}", footer: "${currentBuild.currentResult}", link: "$BUILD_URL", result: currentBuild.currentResult, title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}", webhookURL: "https://discord.com/api/webhooks/1107548454009446400/VbmtyPgxWZAgu-1kcV7ZMYYyNuC4svQ2Mbhew6Hh6RxFSfI-Hmgp79QEa2ta3UytlaFb?thread_id=${ID}"
 
                     def featureSummary = json.featureSummary
                     for (int i = 0; i < featureSummary.size(); i++) {
@@ -71,36 +71,19 @@ pipeline {
                                 ==================================
                                 """
                         if (failed == true) {
+                            ID = 1107548656619499571
                             discordSend (
                                 description: "${messageScenario}",
                                 footer: "FAILURE",
                                 link: "http://localhost:8888/job/automation-karate-api/${env.BUILD_NUMBER}/execution/node/3/ws/target/karate-reports/${packageQualifiedName}.html",
                                 result: "FAILURE", title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}",
-                                webhookURL: "https://discord.com/api/webhooks/1107548454009446400/VbmtyPgxWZAgu-1kcV7ZMYYyNuC4svQ2Mbhew6Hh6RxFSfI-Hmgp79QEa2ta3UytlaFb?thread_id={1107548656619499571}"
-                            )
-
-                        } else {
-                            ID = "1107549132945641553"
-                            discordSend (
-                                description: "1",
-                                footer: "SUCCESS",
-                                link: "http://localhost:8888/job/automation-karate-api/${env.BUILD_NUMBER}/execution/node/3/ws/target/karate-reports/${packageQualifiedName}.html",
-                                result: "SUCCESS", title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}",
-                                webhookURL: "https://discord.com/api/webhooks/1107548454009446400/VbmtyPgxWZAgu-1kcV7ZMYYyNuC4svQ2Mbhew6Hh6RxFSfI-Hmgp79QEa2ta3UytlaFb?thread_id={ID}"
-                            )
-
-                            ID = "1107549132945641553"
-                            discordSend (
-                                description: "2",
-                                footer: "SUCCESS",
-                                link: "http://localhost:8888/job/automation-karate-api/${env.BUILD_NUMBER}/execution/node/3/ws/target/karate-reports/${packageQualifiedName}.html",
-                                result: "SUCCESS", title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}",
                                 webhookURL: "https://discord.com/api/webhooks/1107548454009446400/VbmtyPgxWZAgu-1kcV7ZMYYyNuC4svQ2Mbhew6Hh6RxFSfI-Hmgp79QEa2ta3UytlaFb?thread_id=${ID}"
                             )
 
-                            ID = 1107549132945641553
+                        } else {
+                            ID = 1107547897408524338
                             discordSend (
-                                description: "3",
+                                description: "${messageScenario}",
                                 footer: "SUCCESS",
                                 link: "http://localhost:8888/job/automation-karate-api/${env.BUILD_NUMBER}/execution/node/3/ws/target/karate-reports/${packageQualifiedName}.html",
                                 result: "SUCCESS", title: "Jenkins Pipeline Build ${env.BUILD_NUMBER}",
