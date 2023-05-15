@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'mvn test -Dtest=TestRunnerProearn'
+                bat 'mvn test -Dtest=TestRunnerProearn#EarnCalculator'
             }
         }
         stage('Push To Master') {
@@ -22,8 +22,15 @@ pipeline {
                 }
             }
             steps {
-                bat 'git checkout master'
-                bat 'git push origin master'
+                script {
+                    bat 'git checkout master'
+                    bat 'git merge origin/review'
+                    def mergeStatus = sh(returnStatus: true, script: 'git rev-parse --verify HEAD').exitStatus
+                    if (mergeStatus != 0) {
+                        discordSend description: "Gagal Merge Ke Branch Master", footer: "${currentBuild.currentResult}",  result: currentBuild.currentResult, title: "Jenskins Status", webhookURL: "https://discord.com/api/webhooks/1107548454009446400/VbmtyPgxWZAgu-1kcV7ZMYYyNuC4svQ2Mbhew6Hh6RxFSfI-Hmgp79QEa2ta3UytlaFb"
+                    }
+                    bat 'git push origin master'
+                }
             }
         }
     }
