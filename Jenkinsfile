@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/FikyAnggra/karate-api']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/review']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/FikyAnggra/karate-api']]])
                 discordSend description: "Jenkins Pipeline Build ${env.BUILD_NUMBER}", footer: "STARTED", result: "SUCCESS", title: "Jenkins Status", webhookURL: "https://discord.com/api/webhooks/1107548454009446400/VbmtyPgxWZAgu-1kcV7ZMYYyNuC4svQ2Mbhew6Hh6RxFSfI-Hmgp79QEa2ta3UytlaFb"
 
            }
@@ -11,13 +11,20 @@ pipeline {
         stage('Test') {
             steps {
                 bat 'mvn test -Dtest=TestRunnerProearn'
-                }
+            }
         }
-//         stage('Push') {
-//             steps {
-//                 git push origin master
-//             }
-//         }
+        stage('Push To Master') {
+        when {
+            not {
+                expression {
+                    currentBuild.result == 'FAILURE'
+                }
+            }
+        }
+        steps {
+            sh 'git checkout master'
+            sh 'git push origin master'
+        }
     }
     post {
         always {
