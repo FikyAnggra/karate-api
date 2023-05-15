@@ -14,16 +14,17 @@ pipeline {
             }
         }
         stage('Push To Master') {
-        when {
-            not {
-                expression {
-                    currentBuild.result == 'FAILURE'
+            when {
+                not {
+                    expression {
+                        currentBuild.result == 'FAILURE'
+                    }
                 }
             }
-        }
-        steps {
-            bat 'git checkout master'
-            bat 'git push origin master'
+            steps {
+                bat 'git checkout master'
+                bat 'git push origin master'
+            }
         }
     }
     post {
